@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar_component/Navbar";
+import Comic_body from "./components/Comic_body_component/Comic_body";
+import { useState } from "react";
+import { useEffect } from "react";
 function App() {
+ 
+  const [readingMode,setReadingMode]=useState(false);
+
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar readingMode={readingMode}/>
+      <Comic_body readingMode={readingMode} setReadingMode={setReadingMode} />
     </div>
   );
 }
